@@ -6,14 +6,16 @@
     - [2018_Pre-Processing-Free_Small Datasets_DCNN_Transfer Learning(IEEE Acess)](/mypages/papers_notes/故障诊断/小数据集_迁移学习.md)
   * [回归问题](/mypages/notes/回归问题.md)
 * AI算法
-  - CNN理解
+  - [CNN理解](/mypages/notes/卷积神经网络.md)
   - [迁移学习](/mypages/papers_notes/迁移学习.md)
   - [LSTM网络理解](/mypages/papers_notes/LSTM网络理解.md)
 
 - Python
 
   - [Anaconda](/mypages/Python/Anaconda教程.md)
-  
   - [Python3基础](/mypages/Python/python3_教程.md)
+- 深度学习框架基础
+  - keras
+  - pytorch
 - [使用Docsify做文档网站的详细配置教程](/mypages/使用Docsify做文档网站的详细配置教程.md)
 
