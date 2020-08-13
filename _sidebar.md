@@ -14,7 +14,5 @@
 
   - [Anaconda](/mypages/Python/Anaconda教程.md)
   - [Python3基础](/mypages/Python/python3_教程.md)
-- LaTeX
-  - [LaTeX基本使用](/mypages/notes/LaTeX基本操作.md)
 - [使用Docsify做文档网站的详细配置教程](/mypages/使用Docsify做文档网站的详细配置教程.md)
 
