@@ -38,6 +38,8 @@
 
 划分为训练和测试数据集，训练集数据交叠(overlap)【数据增强目的】。
 
+![image-20200814085540611](/实时_加速CNN/20200814085540611.png)
+
 所有的采样通过最小最大值归一化。
 
 ### 基础的CNN结构
@@ -80,13 +82,19 @@ $$
 
 
 
-### CNN修剪
+### 加速CNN/Accelerating CNN
+
+为了降低CNN的计算代价和内存空间，通过修剪CNN结构和权重共享的方式对CNN网络结构进行优化处理。
+
+> 深度学习的内存管理问题？
+
+#### CNN修剪/CNN Pruning
 
 删除冗余连接，保存信息连接。设置一个threshold，所有的权重低于这个阈值被删除，稀疏连接(sparse connections)剩余权重，重新训练网络。
 
 
 
-### 权重共享
+#### 权重共享/Weigth Sharing
 
 采用标量量化的权重共享，effective weight是有限的，将这些权重存储在有多个连接的网络中，以共享相同的权重。**在共享权重的时候调整减少权重。**
 
@@ -105,6 +113,10 @@ $$
 | Test-set size        | 75       | 225  | 225        | 225        |
 
 为验证模型的鲁棒性，在初始信号中加入了高斯白噪声，信噪比(SNR=4)。
+
+![image-20200814090316106](/实时_加速CNN/20200814090316106.png)
+
+> 为什么选择要加入高斯噪声？
 
 分类的性能指标包括：accuracy(Acc)、specificity(Spe)、positive predictivity(Ppr)：
 $$
@@ -128,17 +140,17 @@ $$
 - 使用径向基函数和交叉验证的SVM
 - 使用sigmoid函数的CNN，迭代1400 epoch
 
+![image-20200814090529080](/实时_加速CNN/20200814090529080.png)
 
+![image-20200814090648041](/实时_加速CNN/20200814090648041.png)
 
-
+![image-20200814090849599](/实时_加速CNN/20200814090849599.png)
 
 ## 创新点
 
 通过移除less important connection和权重共享来实现**实时的故障诊断**。
 
 将特征提取和分类封装到一个block中，实现了比传统CNN快4倍的速度，以此实现实时的故障诊断。
-
-
 
 
 
@@ -174,27 +186,27 @@ $$
 > ```python
 > import numpy as np
 > def gen_gaussian_noise(signal,SNR):
->     """
->     :param signal:原始信号
->     :param SNR:信噪比
->     :return:生成的噪声
->     """
->     
->     #通过numpy.random的randn生成一个标准高斯分布序列
->     noise=np.random.randn(*signal.shape) # *signal.shape 获取样本序列尺寸，产生N(0，1)噪声，噪声采样频率和信号采样频率的校准
->     noise=noise-np.mean(nosie)  #均值=0
->     signal_power=(1/signal.shape[0])*np.sum(np.power(signal,2)) #信号功率/信号方差/标准差std**2
->     noise_variance=signal_power/np.power(10,(SNR/10)) #噪声方差/噪声功率/噪声std**2
->     
->     noise=(np.sqrt(noise_variance)/np.std(noise))*noise  #std*N(0,1)
->     return noise
+> """
+> :param signal:原始信号
+> :param SNR:信噪比
+> :return:生成的噪声
+> """
+> 
+> #通过numpy.random的randn生成一个标准高斯分布序列
+> noise=np.random.randn(*signal.shape) # *signal.shape 获取样本序列尺寸，产生N(0，1)噪声，噪声采样频率和信号采样频率的校准
+> noise=noise-np.mean(nosie)  #均值=0
+> signal_power=(1/signal.shape[0])*np.sum(np.power(signal,2)) #信号功率/信号方差/标准差std**2
+> noise_variance=signal_power/np.power(10,(SNR/10)) #噪声方差/噪声功率/噪声std**2
+> 
+> noise=(np.sqrt(noise_variance)/np.std(noise))*noise  #std*N(0,1)
+> return noise
 > 
 > """
 > def wgn(x,SNR): #wgn是获得原始信号为x相对于信噪比SNR dB的高斯噪声
->     SNR = 10**(SNR/10.0)
->     XPower = np.sum(x**2)/len(x)
->     NPower = XPower / SNR
->     return np.random.randn(len(x)) * np.sqrt(NPower)
+> SNR = 10**(SNR/10.0)
+> XPower = np.sum(x**2)/len(x)
+> NPower = XPower / SNR
+> return np.random.randn(len(x)) * np.sqrt(NPower)
 > """
 > ```
 >
@@ -213,16 +225,16 @@ $$
 >
 > ```python
 > def check_snr(signal,noise):
->     
->      """
->     :param signal:原始信号
->     :param noise:生成的高斯噪声
->     :return:返回两者的信噪比
->     """
->     signal_power=(1/signal.shape[0]) * np.sum(np.power(signal,2)) #0.5722037
->     noise_power = (1/noise.shape[0]) * np.sum(np.power(noise, 2)) #0.90688
->     SNR = 10 * np.log10(signal_power/noise_power)
->     return SNR
+> 
+> """
+> :param signal:原始信号
+> :param noise:生成的高斯噪声
+> :return:返回两者的信噪比
+> """
+> signal_power=(1/signal.shape[0]) * np.sum(np.power(signal,2)) #0.5722037
+> noise_power = (1/noise.shape[0]) * np.sum(np.power(noise, 2)) #0.90688
+> SNR = 10 * np.log10(signal_power/noise_power)
+> return SNR
 > 
 > SNR = check_snr(signal,noise)
 > print(SNR)  #-1.99999999
@@ -238,6 +250,10 @@ $$
 深度学习是数据驱动的模型，其算法的设计并不强烈的依赖于噪声的概率分布，这对于降噪算法的泛化是很好的，但是深度学习算法一般是需要监督学习训练的，在训练数据集的选择上，又往往依赖于噪音的概率分布，如果需要做高斯去噪，训练数据应该添加高斯噪声，相对于传统方法，深度学习的在对特定噪声的处理的鲁棒性要更高。
 
 [如何在信号中添加指定信噪比的高斯白噪声，为何深度学习中研究采用高斯白噪声](https://blog.csdn.net/u012995500/article/details/87606346)
+
+
+
+
 
 
 
