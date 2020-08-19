@@ -17,5 +17,6 @@
 - 深度学习框架基础
   - keras
   - pytorch
-- [使用Docsify做文档网站的详细配置教程](/mypages/使用Docsify做文档网站的详细配置教程.md)
+- 软件安装和环境配置
+  - [在VMware虚拟机下安装CentOS7并配置EPICS](/mypages/notes/vmware虚拟机安装epics过程.md)
 
