@@ -1,22 +1,21 @@
 * 论文笔记归档
-    * [对抗攻击](/mypages/papers_notes/对抗攻击_论文笔记.md)
-    * [深度学习处理时序问题](/mypages/notes/深度学习处理时序问题.md)
+    * [对抗攻击](/papers_notes/对抗攻击_论文笔记.md)
     * 智能故障诊断
-      - [2019_Real-Time_Accelerated DL(Pedstc会议)](/mypages/papers_notes/故障诊断/实时_加速CNN.md)
-      - [2018_Pre-Processing-Free_Small Datasets_DCNN_Transfer Learning(IEEE Acess)](/mypages/papers_notes/故障诊断/小数据集_迁移学习.md)
-    * [回归问题](/mypages/notes/回归问题.md)
+      - [2019_Real-Time_Accelerated DL(Pedstc会议)](/papers_notes/故障诊断/实时_加速CNN.md)
+      - [2018_Pre-Processing-Free_Small Datasets_DCNN_Transfer Learning(IEEE Acess)](/papers_notes/故障诊断/小数据集_迁移学习.md)
+    * [回归问题](/notes/回归问题.md)
 * AI算法
-    - [CNN理解](/mypages/notes/卷积神经网络.md)
-    - [迁移学习](/mypages/papers_notes/迁移学习.md)
-    - [LSTM网络理解](/mypages/papers_notes/LSTM网络理解.md)
+    - [CNN理解](/notes/卷积神经网络.md)
+    - [迁移学习](/papers_notes/迁移学习.md)
+    - [LSTM网络理解](/papers_notes/LSTM网络理解.md)
 
 - Python
 
-  - [Anaconda](/mypages/Python/Anaconda教程.md)
-  - [Python3基础](/mypages/Python/python3_教程.md)
+  - [Anaconda](/Python/Anaconda教程.md)
+  - [Python3基础](/Python/python3_教程.md)
 - 深度学习框架基础
   - keras
   - pytorch
 - 软件安装和环境配置
-  - [在VMware虚拟机下安装CentOS7并配置EPICS](/mypages/notes/vmware虚拟机安装epics过程.md)
+  - [在VMware虚拟机下安装CentOS7并配置EPICS](/notes/vmware虚拟机安装epics过程.md)
 
