@@ -2,7 +2,7 @@
 
 传统的神经网络很难处理一件事——使用先前事件推断后续的事件。RNN解决了这个问题，是包含循环的网络，允许信息的持久化。
 
-![RNN-rolled](/LSTM网络理解/RNN-rolled.png)
+<img src="/papers_notes/LSTM网络理解/RNN-rolled.png" alt="RNN-rolle" style="zoom:33%" />
 
 $A$正在读取输入$x_t$，并输出$h_t$。循环可以使得信息可以从当前步传递到下一步。
 

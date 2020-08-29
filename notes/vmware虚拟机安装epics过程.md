@@ -133,15 +133,12 @@ EPICS Base：baseR3.14.12.8
 
 ​              `vi /root/.bashrc` 输入：
 
-              ```
-EPICS_HOST_ARCH=linux-x86_64
-export EPICS_HOST_ARCH
-PATH=$PATH:/usr/local/epics/base/bin/linux-x86_64/
-export PATH
-EPICS_BASE=/usr/local/epics/base/
-export EPICS_BASE
-              ```
-
+    EPICS_HOST_ARCH=linux-x86_64
+    export EPICS_HOST_ARCH
+    PATH=$PATH:/usr/local/epics/base/bin/linux-x86_64/
+    export PATH
+    EPICS_BASE=/usr/local/epics/base/
+    export EPICS_BASE
 ![bashrc](\vmware虚拟机安装epics过程\bashrc.PNG)
 
 9、修改完保存，更新环境变量
