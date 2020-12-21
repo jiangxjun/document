@@ -17,8 +17,8 @@
   - keras
   - pytorch
 - 软件安装和环境配置
-  - [在VMware虚拟机下安装CentOS7并配置EPICS](/notes/vmware虚拟机安装epics过程.md)
-
-- cet6作文
-  - [cet6作文模板一](/notes/cet6_1.md)
-
+  
+- [在VMware虚拟机下安装CentOS7并配置EPICS](/notes/vmware虚拟机安装epics过程.md)
+  
+    
+  
