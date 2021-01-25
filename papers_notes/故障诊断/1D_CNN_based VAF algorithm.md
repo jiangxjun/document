@@ -222,7 +222,7 @@ t-SNE可视化算法揭示了1D-CNN-based VAF算法的内部机制，由于组�
 
 the 1D-CNN-based VAF algorithm is compared with the 1D-CNN algorithm based on vibration signals, the 1D-CNN algorithm based on acoustic signals, as well as some widely adopted algorithms in bearing fault diagnosis such as the WDCNN , FFT-BP , FFT-SAE and SVM algorithms, which are all based on vibration signals.
 
-<img src="\1D_CNN_based VAF algorithm\4.PNG" alt="4" style="zoom:50%;" />
+
 
 
 
