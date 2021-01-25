@@ -164,7 +164,7 @@ $H(p,q)=-\sum\limits_{x}p(x)\log q(x)$，其中$p(x)$是目标概率分布，$q(
 
 训练和测试数据集划分如下：
 
-![3](\1D_CNN_based VAF algorithm\3.PNG)
+![2](\1D_CNN_based VAF algorithm\2.PNG)
 
 为了模拟现实环境，引入了不同SNRs的高斯噪声（-10dB、-6dB、0dB、6dB）。
 
@@ -222,7 +222,7 @@ t-SNE可视化算法揭示了1D-CNN-based VAF算法的内部机制，由于组�
 
 the 1D-CNN-based VAF algorithm is compared with the 1D-CNN algorithm based on vibration signals, the 1D-CNN algorithm based on acoustic signals, as well as some widely adopted algorithms in bearing fault diagnosis such as the WDCNN , FFT-BP , FFT-SAE and SVM algorithms, which are all based on vibration signals.
 
-![4](\1D_CNN_based VAF algorithm\4.PNG)
+![15](\1D_CNN_based VAF algorithm\15.PNG)
 
 
 
