@@ -3,7 +3,7 @@
     * 智能故障诊断
       - [2019_Real-Time_Accelerated DL(Pedstc会议)](/papers_notes/故障诊断/实时_加速CNN.md)
       - [2018_Pre-Processing-Free_Small Datasets_DCNN_Transfer Learning(IEEE Acess)](/papers_notes/故障诊断/小数据集_迁移学习.md)
-      - [Bearing fault diagnosis based on vibro-acoustic data fusion and 1D-CNN network](/papers_notes/故障诊断/1D_CNN_based VAF algorithm.md)
+      - [2020_Bearing fault diagnosis based on vibro-acoustic data fusion and 1D-CNN network](/papers_notes/故障诊断/1D_CNN_based VAF algorithm.md)
     * [回归问题](/notes/回归问题.md)
 * AI算法
     - [CNN理解](/notes/卷积神经网络.md)
