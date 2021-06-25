@@ -9,7 +9,7 @@
 * 工具使用
 * 课程学习
 
-[BLOG](https://jiangxj.top/)
+[BLOG](https://jiangxj.top/blog/)
 [论文笔记](/README.md)
 [阅读]()
 [Python](/README.md)
