@@ -152,7 +152,7 @@ GCN厉害的地方：即使不训练，完全使用随机初始化的权重参�
 ### 一些论文
 
 ```
-https://jiangxj.top/document/papers_notes/pdf_files/GCN.pdf
+https://jiangxj.top/document/pdf_files/GCN.pdf
 ```
 
 
