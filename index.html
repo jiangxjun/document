@@ -7,13 +7,13 @@
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 
-  <link rel="stylesheet" href="vue.css">
-  
+  <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
+  <link rel="stylesheet" href="./style.css">
 
 </head>
 <body>
 
-  <div id="app"></div>
+  <div id="app">Loading...</div>
   <script>
     window.$docsify = {
       name: '',
@@ -37,6 +37,7 @@
 
   window.$docsify = {
     
+    //el:'app', //docsify初始化的挂载元素，默认#app,不存在则挂载在body上
     name: '论文笔记归档',
     subMaxLevel: 2,
 
@@ -44,6 +45,8 @@
     loadNavbar: '_navbar.md', // 右上角的小下拉图标
     homepage: 'README.md', // 首页，默认是 README.md
     coverpage: '_coverpage.md', // 封面
+    
+    //mergeNavbar: ture,  //小屏合并导航栏到侧边栏
 
     // 切换页面后，自动滚动到顶部
     auto2top: true,
@@ -150,14 +153,8 @@
 </script>
 
 
-
-
-
-
-
+<!--页面内搜索 -->
 <script src="//unpkg.com/docsify/lib/plugins/search.js"></script>
-
-
 
 <!-- 内嵌pdf-->
 <!-- PDFObject.js is a required dependency of this plugin -->
@@ -187,24 +184,6 @@
 <!-- LaTeX支持 -->
 <script src="//cdn.jsdelivr.net/npm/docsify-katex@latest/dist/docsify-katex.js"></script>
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"> 
-
-<!-- <script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    extensions: ["tex2jax.js"],
-    jax: ["input/TeX", "output/HTML-CSS"],
-    tex2jax: {
-      <!--$表示行内元素，$$表示块状元素 
-      inlineMath: [ ['$','$']],
-      displayMath: [ ['$$','$$'] ],
-      processEscapes: true
-    },
-    "HTML-CSS": { availableFonts: ["TeX"] }
-  });
-</script>
-<!--加载MathJax的最新文件， async表示异步加载进来 -->
-<!-- <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js">
-</script> -->
-
 
 <!-- 代码copy -->
 <script src="//unpkg.com/docsify-copy-code"></script>
