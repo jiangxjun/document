@@ -8,6 +8,6 @@
 
 [(**2019-Pedstc会议**)实时加速CNN](/故障诊断/实时_加速CNN.md)
 
-[(**2020-Measurement**)轴承-振动和声数据融合-1D-CNN](/故障诊断/1D-CNN-based.md)
+[(**2020-Measurement**)轴承-振动和声数据融合-1D-CNN](/故障诊断/1D-CNN-based.html)
 
 
