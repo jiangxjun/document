@@ -77,15 +77,13 @@
       isExpected: true
   },
     //添加评论功能
-
-     plugins: [
-        /*来必力评论*/
-       /* function (hook, vm) {
+     //来必力评论
+     /* plugins: [
+        function (hook, vm) {
           hook.beforeEach(function(content) {
             var comment = "<div id='lv-container' data-id='city' data-uid='MTAyMC80MzA4MC8xOTYyNg=='></div>\n\n----\n"
             return content + comment;
           });
-
           hook.doneEach(function() {
             (function(d, s) {
               var j, e = d.getElementsByTagName(s)[0];
