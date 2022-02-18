@@ -85,7 +85,7 @@ the signals simultaneously collected by two different modal sensors, an accelero
 
 1D-CNN 包括五个卷积层，五个池化层，一个全连接层和一个softmax分类层。
 
-<img src="./1D-CNN-based-VAF-algorithm/1.jpg" alt="5" style="zoom: 33%;" />
+<center><img src="./1D-CNN-based-VAF-algorithm/1.jpg" title="1D-CNN结构" width=75% /> </center>
 
 第一个卷积层将输入信号转化为特征映射，然后下采样到最大池化层。重复四次，连接到全连接层，然乎通过ReLU激活函数转移到softmax层。
 
@@ -99,7 +99,7 @@ This model has five convolutional layers and pooling layers. The size of the con
 
 ### 1D-CNN-based VAF algorithm
 
-<img src="./1D-CNN-based-VAF-algorithm/3.jpg" alt="5" width=75% />
+<center><img src="./1D-CNN-based-VAF-algorithm/3.jpg"  width=75% /></center>
 
 算法主要可以分为三个部分：
 
