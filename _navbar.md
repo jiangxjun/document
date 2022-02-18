@@ -1,4 +1,4 @@
 * [主页]()
-* [BLOG](https://jiangxj.top/)
-* [Github](https://github.com/)
+* <font face=Times New Roman>[BLOG](https://jiangxj.top/)</font>
+* <font face=Times New Roman>[GitHub](https://github.com/)</font>
 

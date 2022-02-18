@@ -85,7 +85,10 @@ the signals simultaneously collected by two different modal sensors, an accelero
 
 1D-CNN 包括五个卷积层，五个池化层，一个全连接层和一个softmax分类层。
 
-<center><img src="./1D-CNN-based-VAF-algorithm/1.jpg" title="1D-CNN结构" width=75% /> </center>
+<div align="center">
+<img src="故障诊断/1D-CNN-based-VAF-algorithm/1.jpg" alt="1D-CNN" style="zoom:50%;" />
+
+</div>
 
 第一个卷积层将输入信号转化为特征映射，然后下采样到最大池化层。重复四次，连接到全连接层，然乎通过ReLU激活函数转移到softmax层。
 
@@ -99,7 +102,11 @@ This model has five convolutional layers and pooling layers. The size of the con
 
 ### 1D-CNN-based VAF algorithm
 
-<center><img src="./1D-CNN-based-VAF-algorithm/3.jpg"  width=75% /></center>
+<div align="center">
+
+<img src="故障诊断/1D-CNN-based-VAF-algorithm/3.jpg" alt="1D-CNN-based VAF algorithm" style="zoom:35%;" />
+
+</div>
 
 算法主要可以分为三个部分：
 
@@ -127,7 +134,11 @@ $H(p,q)=-\sum\limits_{x}p(x)\log q(x)$，其中$p(x)$是目标概率分布，$q(
 
 ### 实验平台
 
-<img src="./1D-CNN-based-VAF-algorithm/4.jpg" alt="5" style="zoom: 50%;" />
+<div align="center">
+
+<img src="故障诊断/1D-CNN-based-VAF-algorithm/4.jpg" alt="5" style="zoom: 50%;" />
+
+</div>
 
 实验装置包括一个发动机、一个加速度传感器（vibration signals）、一个麦克风（acoustic signals）、一套数据采集系统（NI PXIe-8153和PXIe-6358）、10组轴承（N205）
 
@@ -140,7 +151,11 @@ $H(p,q)=-\sum\limits_{x}p(x)\log q(x)$，其中$p(x)$是目标概率分布，$q(
 
 十组实验轴承：
 
-<img src="./1D-CNN-based-VAF-algorithm/5.jpg" alt="5" style="zoom: 33%;" />
+<div align="center">
+
+<img src="故障诊断/1D-CNN-based-VAF-algorithm/5.jpg" alt="5" style="zoom: 33%;" />
+
+</div>
 
 （a）正常轴承； 
 
@@ -158,15 +173,27 @@ $H(p,q)=-\sum\limits_{x}p(x)\log q(x)$，其中$p(x)$是目标概率分布，$q(
 
 每组随机采集2700个样本，每个样本包括2048个振动信号值和2048个声信号值。
 
-<img src="./1D-CNN-based-VAF-algorithm/8.jpg" alt="8" style="zoom:33%;" />
+<div align="center">
+
+<img src="故障诊断/1D-CNN-based-VAF-algorithm/8.jpg" alt="8" style="zoom:33%;" />
+
+</div>
+
+<div align="center">
+
+<img src="故障诊断/1D-CNN-based-VAF-algorithm/9.jpg" alt="9" style="zoom:33%;" />
+
+</div>
 
 
-
-<img src="./1D-CNN-based-VAF-algorithm/9.jpg" alt="9" style="zoom:33%;" />
 
 训练和测试数据集划分如下：
 
-![2](/1D-CNN-based-VAF-algorithm/2.PNG)
+<div align="center">
+
+![2](./1D-CNN-based-VAF-algorithm/2.PNG)
+
+</div>
 
 为了模拟现实环境，引入了不同SNRs的高斯噪声（-10dB、-6dB、0dB、6dB）。
 
@@ -182,7 +209,11 @@ $H(p,q)=-\sum\limits_{x}p(x)\log q(x)$，其中$p(x)$是目标概率分布，$q(
 
 即预测值和实际值误差越小，算法性能越好。通过将每次迭代得到的预测值插入描述损失函数的交叉熵公式种，得到损失函数值。500次迭代后得到的结果如下：
 
-<img src="./1D-CNN-based-VAF-algorithm/10.jpg" alt="9" style="zoom:33%;" />
+<div align="center">
+
+<img src="故障诊断/1D-CNN-based-VAF-algorithm/10.jpg" alt="9" style="zoom:33%;" />
+
+</div>
 
 随着迭代次数增加，损失函数曲线呈下降趋势，即算法准确率逐渐提高。
 
@@ -194,7 +225,11 @@ $H(p,q)=-\sum\limits_{x}p(x)\log q(x)$，其中$p(x)$是目标概率分布，$q(
 
 准确率是指对于给定的测试数据集，分类器正确分类的样本数量/总样本数，直接反映算法的分类性能。
 
-<img src="./1D-CNN-based-VAF-algorithm/11.jpg" alt="9" style="zoom:33%;" />
+<div align="center">
+
+<img src="故障诊断/1D-CNN-based-VAF-algorithm/11.jpg" alt="9" style="zoom:33%;" />
+
+</div>
 
 ### The t-SNE visualization analysis
 
@@ -202,15 +237,27 @@ t-SNE是一种可视化算法，将数据点之间的高维欧式距离转化为
 
 为研究1D-CNN-based VAF算法的内在机理，在可视化分析种使用了轴承故障样本的一个数据集，相应的添加了高斯噪声到原始数据种，SNR=-6 dB。
 
-<img src="./1D-CNN-based-VAF-algorithm/12.jpg" alt="12" style="zoom:33%;" />
+<div align="center">
+
+<img src="故障诊断/1D-CNN-based-VAF-algorithm/12.jpg" alt="12" style="zoom:33%;" />
+
+</div>
 
 (a) and (b) shows that the features of **the vibration signals** in the original time domain can hardly be separated from the data at the first convolutional layer. In (c) and (d), the features obtained after two or three convolutional layers are still not completely divided but the feature distributions start to show a trend of separation. In (e) and (f), the features obtained after four or five convolutional layers have been gradually separated.
 
-<img src="./1D-CNN-based-VAF-algorithm/13.jpg" alt="13" style="zoom:33%;" />
+<div align="center">
+
+<img src="故障诊断/1D-CNN-based-VAF-algorithm/13.jpg" alt="13" style="zoom:33%;" />
+
+</div>
 
 (a) and (b) shows that the features of **the acoustic signals** in the original time domain can hardly be separated from the data at the first convolutional layer. In (c) and (d), the features obtained after two or three convolutional layers are still not completely divided, but the feature distributions start to show a trend of separation. In (e) and (f), the features obtained after four or five layers of convolution have been gradually separated
 
-<img src="./1D-CNN-based-VAF-algorithm/14.jpg" alt="14" style="zoom:33%;" />
+<div align="center">
+
+<img src="故障诊断/1D-CNN-based-VAF-algorithm/14.jpg" alt="14" style="zoom:33%;" />
+
+</div>
 
 the features of the vibration and acoustic signals after the fifth convolutional layer are imported into the FC layer at the fusion stage for visual display.
 
@@ -224,9 +271,11 @@ t-SNE可视化算法揭示了1D-CNN-based VAF算法的内部机制，由于组�
 
 the 1D-CNN-based VAF algorithm is compared with the 1D-CNN algorithm based on vibration signals, the 1D-CNN algorithm based on acoustic signals, as well as some widely adopted algorithms in bearing fault diagnosis such as the WDCNN , FFT-BP , FFT-SAE and SVM algorithms, which are all based on vibration signals.
 
+<div align="center">
+
 ![15](./1D-CNN-based-VAF-algorithm/15.PNG)
 
-
+</div>
 
 ## Conclusion
 

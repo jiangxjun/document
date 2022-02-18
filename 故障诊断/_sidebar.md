@@ -1,13 +1,13 @@
-# [智能故障诊断](/故障诊断/README.md)<!-- {docsify-ignore} -->
+# <font size=5>[智能故障诊断](/故障诊断/README.md)</font><!-- {docsify-ignore} -->
 
-### 综述
+- <font size=4>**综述**</font>
 
-### 应用
+- <font size=4>**应用**</font>
 
-[(**2018-IEEE Acess**)小数据集-迁移学习](/故障诊断/小数据集_迁移学习.md)
+  - [<font color=red face="微软雅黑">(2018-IEEE Acess)小数据集-迁移学习</font>](/故障诊断/小数据集_迁移学习.md)
 
-[(**2019-Pedstc会议**)实时加速CNN](/故障诊断/实时_加速CNN.md)
+  - [<font color=red face="微软雅黑">(2019-Pedstc会议)实时加速CNN</font>](/故障诊断/实时_加速CNN.md)
 
-[(**2020-Measurement**)轴承-振动和声数据融合-1D-CNN](/故障诊断/1D-CNN-based.html)
+  - [<font color=red face="微软雅黑">(2020-Measurement)轴承-振动和声数据融合-1D-CNN</font>](/故障诊断/1D-CNN-based.md)
 
 
